@@ -1,12 +1,33 @@
 <?php
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use App\Models\Course;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
+    public function loginPage()
+    {
+        return view('dashboard.login');    
+    }
+
+    public function login(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+    
+        if (Auth::attempt($credentials)) {
+            return redirect()->route('dashboard');
+        } else {
+            return redirect()->route('loginPage')->with('error', 'Invalid email or password');
+        }
+    }
+    
+
     public function index()
     {
         return view('index');

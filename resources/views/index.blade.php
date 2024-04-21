@@ -16,128 +16,37 @@
 
     </div>
     <!-- box -->
-    <div
-      class="px-5 grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3 lg:max-w-[80rem] lg:grid-cols-4  mt-8  container mx-auto">
-
-      <div class="  overflow-hidden bg-white rounded-lg shadow-md">
-        <div class="relative">
-          <img class="w-full h-64 object-cover" src="image/one.png" alt="Image">
-          <div class="absolute top-0 right-0">
-            <div class="w-32 h-8 absolute top-4 -right-8">
-              <div class="h-full w-full bg-red-600 text-white text-center leading-8 font-semibold transform rotate-45">
-                SALE</div>
+    <div class="px-5 grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3 lg:max-w-[80rem] lg:grid-cols-4  mt-8  container mx-auto">
+      @foreach (\App\Models\Course::all() as $course)
+        <div class="overflow-hidden bg-white rounded-lg shadow-md">
+          <div class="relative">
+            <img class="w-full h-64 object-cover" src="{{ asset('image/'.$course->image) }}" alt="Image">
+            <div class="absolute top-0 right-0">
+              <div class="w-32 h-8 absolute top-4 -right-8">
+                <div class="h-full w-full bg-red-600 text-white text-center leading-8 font-semibold transform rotate-45">
+                  SALE</div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="relative">
+          <div class="relative">
 
-          <div class="p-4 absolute right-0 top-[-34px] bg-white mr-3 rounded-lg	 shadow-inner	drop-shadow-lg">
-            <h3 class="text-xl font-semibold mb-2 text-[#f00] line-through decoration-[#f00]">$350</h3>
-          </div>
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Product Sale</h3>
-            <p class="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam bibendum
-              auctor felis, vel consequat odio ullamcorper eu.
-            </p>
-          </div>
-        </div>
-        <div class="flex justify-center">
-          <button class=" bg-blue-500 mb-5 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            <a href="pageCoure.html">Buy now</a>
-          </button>
-        </div>
-      </div>
-
-      <div class="  overflow-hidden bg-white rounded-lg shadow-md">
-        <div class="relative">
-          <img class="w-full h-64 object-cover" src="image/twoo.png" alt="Image">
-          <div class="absolute top-0 right-0">
-            <div class="w-32 h-8 absolute top-4 -right-8">
-              <div class="h-full w-full bg-red-600 text-white text-center leading-8 font-semibold transform rotate-45">
-                SALE</div>
+            <div class="p-4 absolute right-0 top-[-34px] bg-white mr-3 rounded-lg	 shadow-inner	drop-shadow-lg">
+              <h3 class="text-xl font-semibold mb-2 text-[#f00] line-through decoration-[#f00]">${{$course->price}}</h3>
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">{{ $course->title }}</h3>
+              <p class="text-gray-700 text-base">
+                {{ $course->description }}
+              </p>
             </div>
           </div>
-        </div>
-        <div class="relative">
-
-          <div class="p-4 absolute right-0 top-[-34px] bg-white mr-3 rounded-lg	 shadow-inner	drop-shadow-lg">
-            <h3 class="text-xl font-semibold mb-2 text-[#f00] line-through decoration-[#f00]">$350</h3>
-          </div>
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Product Sale</h3>
-            <p class="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam bibendum
-              auctor felis, vel consequat odio ullamcorper eu.
-            </p>
+          <div class="flex justify-center">
+            <button class=" bg-blue-500 mb-5 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              <a href="pageCoure.html">Buy now</a>
+            </button>
           </div>
         </div>
-        <div class="flex justify-center">
-          <button class=" bg-blue-500 mb-5 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Primary Button
-          </button>
-        </div>
-      </div>
-      <div class="  overflow-hidden bg-white rounded-lg shadow-md">
-        <div class="relative">
-          <img class="w-full h-64 object-cover" src="image/threee.png" alt="Image">
-          <div class="absolute top-0 right-0">
-            <div class="w-32 h-8 absolute top-4 -right-8">
-              <div class="h-full w-full bg-red-600 text-white text-center leading-8 font-semibold transform rotate-45">
-                SALE</div>
-            </div>
-          </div>
-        </div>
-        <div class="relative">
-
-          <div class="p-4 absolute right-0 top-[-34px] bg-white mr-3 rounded-lg	 shadow-inner	drop-shadow-lg">
-            <h3 class="text-xl font-semibold mb-2 text-[#f00] line-through decoration-[#f00]">$350</h3>
-          </div>
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Product Sale</h3>
-            <p class="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam bibendum
-              auctor felis, vel consequat odio ullamcorper eu.
-            </p>
-          </div>
-        </div>
-        <div class="flex justify-center">
-          <button class=" bg-blue-500 mb-5 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Primary Button
-          </button>
-        </div>
-      </div>
-
-      <div class="  overflow-hidden bg-white rounded-lg shadow-md">
-        <div class="relative">
-          <img class="w-full h-64 object-cover" src="image/fourr.png" alt="Image">
-          <div class="absolute top-0 right-0">
-            <div class="w-32 h-8 absolute top-4 -right-8">
-              <div class="h-full w-full bg-red-600 text-white text-center leading-8 font-semibold transform rotate-45">
-                SALE</div>
-            </div>
-          </div>
-        </div>
-        <div class="relative">
-
-          <div class="p-4 absolute right-0 top-[-34px] bg-white mr-3 rounded-lg	 shadow-inner	drop-shadow-lg">
-            <h3 class="text-xl font-semibold mb-2 text-[#f00] line-through decoration-[#f00]">$350</h3>
-          </div>
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Product Sale</h3>
-            <p class="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam bibendum
-              auctor felis, vel consequat odio ullamcorper eu.
-            </p>
-          </div>
-        </div>
-        <div class="flex justify-center">
-          <button class=" bg-blue-500 mb-5 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Primary Button
-          </button>
-        </div>
-      </div>
-
+      @endforeach
 
     </div>
     <!-- box -->
