@@ -39,6 +39,24 @@ class DashboardController extends Controller
         return redirect()->back();
     }
 
+    public function editCoursePage(Request $request)
+    {
+        return view('dashboard.editCoursePage');
+    }
+
+    public function editCourse(Request $request)
+    {
+
+    }
+
+    public function deleteCourse($id)
+    {
+        $course = Course::find($id);
+        $course->delete();
+        return redirect()->back();
+    }
+
+
 
     public function teachers()
     {

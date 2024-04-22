@@ -12,10 +12,8 @@ Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashbo
 
 Route::prefix('dashboard')->name('dashboard.')->group(function(){
     Route::get('courses', [DashboardController::class, 'courses'])->name('courses');
-    Route::post('addCourse', [DashboardController::class, 'addCourse'])->name('addCourse');
 
     Route::get('teachers', [DashboardController::class, 'teachers'])->name('teachers');
-    Route::post('addTeacher', [DashboardController::class, 'addTeacher'])->name('addTeacher');
 
     Route::get('information', [DashboardController::class, 'information'])->name('information');
 });

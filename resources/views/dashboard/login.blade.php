@@ -11,7 +11,7 @@
         </div>
 
 
-        <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div class="text-center mt-8 sm:mx-auto sm:w-full sm:max-w-md">
 
             <div class="max-w-sm bg-white rounded-lg overflow-hidden shadow-lg mx-auto">
                 <div class="p-6">

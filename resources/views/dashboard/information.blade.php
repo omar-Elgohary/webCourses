@@ -1,5 +1,15 @@
-@include('dashboard.layouts.header')
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{{ asset('assets/src/output.css') }}">
+</head>
+
+
+<body class="bg-gray-200">
   <div class="bg-gray-100">
 
     <div class="h-screen flex overflow-hidden bg-gray-200">
@@ -35,23 +45,25 @@
                     <thead class="bg-white border-b">
                       <tr>
                         <th scope="col" class="text-base font-semibold text-gray-900 px-6 py-4 text-right">
-                          #
-                        </th>
-                        <th scope="col" class="text-base font-semibold text-gray-900 px-6 py-4 text-right">
-                          Name
+                          number
                         </th>
                         <th scope="col" class="text-base font-semibold text-gray-900 px-6 py-4 text-righ">
-                          Phone
+                          Full Name
                         </th>
                         <th scope="col" class="text-base font-semibold text-gray-900 px-6 py-4 text-righ">
-                          Email 
+                          Phone Number
+                        </th>
+                        <th scope="col" class="text-base font-semibold text-gray-900 px-6 py-4 text-righ">
+                          Email Address
                         </th>
                         <th scope="col" class="text-base font-semibold text-gray-900 px-6 py-4 text-righ">
                           Country
                         </th>
+
                         <th scope="col" class="text-base font-semibold text-gray-900 px-6 py-4 text-righ">
-                          city
+                          Enter city
                         </th>
+
                         <th scope="col" class="text-base font-semibold text-gray-900 px-6 py-4 text-righ">
                           Address
                         </th>
@@ -60,28 +72,26 @@
                         </th>
                       </tr>
                     </thead>
-
-                  @foreach (\App\Models\PurchaseRequest::all() as $key => $item)
                     <tbody>
                       <tr class="bg-gray-100 border-b" id="informationDetails">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center text-gray-900">{{ $key+1 }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center text-gray-900">1</td>
                         <td class="text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
-                          {{ $item->name }}
+                          khaeld mohamed
                         </td>
                         <td class="text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
-                          {{ $item->phone }}
+                          01026540533
                         </td>
                         <td class="text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
-                          {{ $item->email }}
+                          khaeld@gmail.com
                         </td>
                         <td class="text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
-                          {{ $item->country }}
+                          Egypt
                         </td>
                         <td class="text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
-                          {{ $item->city }}
+                          Egypt
                         </td>
                         <td class="text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
-                          {{ $item->address }}
+                          7 Tolba El-Feki St
                         </td>
                         <td>
                           <button onclick="deleteData() "
@@ -91,7 +101,6 @@
                       </tr>
 
                     </tbody>
-                  @endforeach
                   </table>
                 </div>
               </div>
@@ -101,4 +110,32 @@
 
       </div>
     </div>
-@include('dashboard.layouts.footer')
+
+    <script>
+      let informationDetails = document.getElementById("informationDetails")
+      function deleteData() {
+        informationDetails.remove()
+      }
+      const sidebar = document.getElementById('sidebar');
+      const openSidebarButton = document.getElementById('open-sidebar');
+
+      openSidebarButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        sidebar.classList.toggle('-translate-x-full');
+      });
+
+      // Close the sidebar when clicking outside of it
+      document.addEventListener('click', (e) => {
+        if (!sidebar.contains(e.target) && !openSidebarButton.contains(e.target)) {
+          sidebar.classList.add('-translate-x-full');
+        }
+      });
+    </script>
+
+  </div>
+  </script>
+</body>
+
+
+
+</html>

@@ -1,7 +1,6 @@
 @include('dashboard.layouts.header')
 
   <div class="bg-gray-100">
-
     <div class="h-screen flex overflow-hidden bg-gray-200">
       <!-- Sidebar -->
       @include('dashboard.layouts.sidebar')
@@ -31,7 +30,7 @@
             <div class=" ">
               <div class="w-full items-center flex flex-col ">
                 <div class="flex items-center justify-center">
-                  <img class="h-10 w-auto" src="/Dashboard/image/logo.png" alt="ALC">
+                  <img class="h-10 w-auto" src="image/logo.png" alt="ALC">
                   <h2 class="text-center text-3xl leading-9 font-extrabold text-gray-900">ALC</h2>
                 </div>
                 <h1 class="text-4xl font-bold mt-2 mb-6">Helping you find your new home;<br>by simplifying the search.
@@ -55,4 +54,27 @@
       </div>
     </div>
 
-@include('dashboard.layouts.footer')
+    <script>
+      const sidebar = document.getElementById('sidebar');
+      const openSidebarButton = document.getElementById('open-sidebar');
+
+      openSidebarButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        sidebar.classList.toggle('-translate-x-full');
+      });
+
+      // Close the sidebar when clicking outside of it
+      document.addEventListener('click', (e) => {
+        if (!sidebar.contains(e.target) && !openSidebarButton.contains(e.target)) {
+          sidebar.classList.add('-translate-x-full');
+        }
+      });
+    </script>
+
+  </div>
+  </script>
+</body>
+
+
+
+</html>
