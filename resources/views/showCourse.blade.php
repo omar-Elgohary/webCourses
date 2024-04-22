@@ -1,10 +1,10 @@
 @include('layouts.header')
 @include('layouts.navbar')
 @include('layouts.bg-cover')
-@include('layouts.logo')
+@include('layouts.logo') 
 
   <!-- start about -->
-  <div class="relative overflow-hidden pt-16  space-y-24">
+  <div class="relative overflow-hidden pt-16 space-y-24">
     <div class="relative  container mx-auto ">
       <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8 ">
         <div class="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 ">
@@ -23,9 +23,7 @@
                 </div>
               </div>
               <p class="mt-2 text-lg text-[#5C6C7B]">
-                At FastGo, we believe in providing our clients with personalized and efficient logistics solutions that
-                meet their unique needs. With years of experience and a team of experts, we are dedicated to empowering
-                your business with seamless shipping experiences.
+                {{ $course->description }}
               </p>
               <button class=" mt-3 w-full bg-blue-500 mb-5 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 Primary Button
@@ -36,7 +34,7 @@
 
         <div class=" px-4 mt-8">
           <img loading="lazy" width="" height="" class=" w-[100%] rounded-xl shadow-2xl h-[450px]"
-            style="color:transparent" src="image/onepage.png">
+            style="color:transparent" src="{{ asset('image/'. $course->image)}}">
 
         </div>
       </div>
@@ -51,16 +49,11 @@
         <h1 class="text-3xl uppercase font-black	"> Details</h1>
         <h3 class=" text-2xl my-3 text-blue-500 font-bold">What you'll learn</h3>
         <div class="text-lg ">
-          <p class="mb-2">1- LEARN EVERYTHING about English grammar, English speaking, English writing and English
-            pronunciation.</p>
-          <p class="mb-2">2- LEARN EVERYTHING about English grammar, English speaking, English writing and English
-            pronunciation.</p>
-          <p class="mb-2">3- LEARN EVERYTHING about English grammar, English speaking, English writing and English
-            pronunciation.</p>
-          <p class="mb-2">4- LEARN EVERYTHING about English grammar, English speaking, English writing and English
-            pronunciation.</p>
-          <p class="mb-2">5- LEARN EVERYTHING about English grammar, English speaking, English writing and English
-            pronunciation.</p>
+          <p class="mb-2">1- {{ $course->description }}</p>
+          <p class="mb-2">2- {{ $course->description }}</p>
+          <p class="mb-2">3- {{ $course->description }}</p>
+          <p class="mb-2">4- {{ $course->description }}</p>
+          <p class="mb-2">5- {{ $course->description }}</p>
         </div>
       </div>
     </div>
@@ -165,7 +158,7 @@
             <p class="mt-6">Eu lobortis elementum nibh tellus molestie nunc non blandit massa.
               Sit amet consectetur adipiscing elit duis.
             </p>
-            <div class="flex items-center mt-8"><img class="w-12 h-12 mr-4 rounded-full" src="image/khaledOne.png"
+            <div class="flex items-center mt-8"><img class="w-12 h-12 mr-4 rounded-full" src="{{ asset('image/khaledOne.png')}}"
                 alt="Jane Doe">
               <div>
                 <p>Jane Doe
@@ -185,7 +178,7 @@
             <p class="mt-6">Eu lobortis elementum nibh tellus molestie nunc non blandit massa.
               Sit amet consectetur adipiscing elit duis.
             </p>
-            <div class="flex items-center mt-8"><img class="w-12 h-12 mr-4 rounded-full" src="image/khaledTwo.jpg"
+            <div class="flex items-center mt-8"><img class="w-12 h-12 mr-4 rounded-full" src="{{ asset('image/khaledTwo.jpg')}}"
                 alt="John Doe">
               <div>
                 <p>John Doe
@@ -205,7 +198,7 @@
             <p class="mt-6">Eu lobortis elementum nibh tellus molestie nunc non blandit massa.
               Sit amet consectetur adipiscing elit duis.
             </p>
-            <div class="flex items-center mt-8"><img class="w-12 h-12 mr-4 rounded-full" src="image/khaledThree.jpg"
+            <div class="flex items-center mt-8"><img class="w-12 h-12 mr-4 rounded-full" src="{{ asset('image/khaledThree.jpg')}}"
                 alt="Jane Smith">
               <div>
                 <p>Jane Smith

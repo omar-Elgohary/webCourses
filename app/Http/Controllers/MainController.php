@@ -62,6 +62,7 @@ class MainController extends Controller
 
     public function showCourse($id)
     {
-        return view('showCourse');
+        $course = Course::find($id);
+        return view('showCourse', compact('course'));
     }
 }
