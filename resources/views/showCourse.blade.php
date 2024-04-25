@@ -1,7 +1,6 @@
 @include('layouts.header')
 @include('layouts.navbar')
-@include('layouts.bg-cover')
-@include('layouts.logo')
+
 
   <!-- start about -->
   <div class="relative overflow-hidden pt-16 space-y-24">
