@@ -10,7 +10,7 @@ class MainController extends Controller
 {
     public function loginPage()
     {
-        return view('dashboard.login');    
+        return view('dashboard.login');
     }
 
     public function login(Request $request)
@@ -19,14 +19,14 @@ class MainController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
-    
+
         if (Auth::attempt($credentials)) {
             return redirect()->route('dashboard');
         } else {
             return redirect()->route('loginPage')->with('error', 'Invalid email or password');
         }
     }
-    
+
 
     public function index()
     {
@@ -34,7 +34,7 @@ class MainController extends Controller
     }
 
     public function about()
-    { 
+    {
         return view('about');
     }
 
@@ -42,6 +42,12 @@ class MainController extends Controller
     {
         $courses = Course::get();
         return view('courses', compact('courses'));
+    }
+
+    public function showCourse($id)
+    {
+        $course = Course::find($id);
+        return view('showCourse', compact('course'));
     }
 
     public function teachers()
@@ -58,11 +64,5 @@ class MainController extends Controller
     public function contact()
     {
         return view('contact');
-    }
-
-    public function showCourse($id)
-    {
-        $course = Course::find($id);
-        return view('showCourse', compact('course'));
     }
 }

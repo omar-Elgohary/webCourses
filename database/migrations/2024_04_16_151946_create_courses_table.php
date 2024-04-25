@@ -10,9 +10,14 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('image');
-            $table->string('title');
-            $table->text('description');
+            $table->string('name');
             $table->decimal('price');
+            $table->text('description');
+            $table->text('line_one');
+            $table->text('line_two');
+            $table->text('line_three');
+            $table->text('line_four');
+            $table->text('line_five');
             $table->timestamps();
         });
     }

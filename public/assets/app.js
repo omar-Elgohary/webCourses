@@ -61,14 +61,9 @@ function showInfo() {
             }</td>
             <td  class="w-52 overflow-hidden text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
             <p class="w-52">${element.employeeCity}</p></td>
-        
-            
-            
-            
-
 
             <td class="flex justify-center gap-2 text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
-               
+
 
                 <button class="  bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-3 edit-btn rounded-[8px]" onclick="editInfo(${index}, '${
       element.picture
@@ -77,7 +72,7 @@ function showInfo() {
     }')" data-bs-toggle="modal" data-bs-target="#userForm"><i class="bi bi-pencil-square"></i></button>
 
                 <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-3 rounded-[8px] delete-btn" onclick="deleteInfo(${index})"><i class="bi bi-trash"></i></button>
-                            
+
             </td>
         </tr>`;
 

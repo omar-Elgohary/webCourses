@@ -45,62 +45,60 @@
                     <thead class="bg-white border-b">
                       <tr>
                         <th scope="col" class="text-base font-semibold text-gray-900 px-6 py-4 text-right">
-                          number
+                          #
                         </th>
                         <th scope="col" class="text-base font-semibold text-gray-900 px-6 py-4 text-righ">
-                          Full Name
+                          Name
                         </th>
                         <th scope="col" class="text-base font-semibold text-gray-900 px-6 py-4 text-righ">
-                          Phone Number
+                          Phone
                         </th>
                         <th scope="col" class="text-base font-semibold text-gray-900 px-6 py-4 text-righ">
-                          Email Address
+                          Email
                         </th>
                         <th scope="col" class="text-base font-semibold text-gray-900 px-6 py-4 text-righ">
                           Country
                         </th>
-
                         <th scope="col" class="text-base font-semibold text-gray-900 px-6 py-4 text-righ">
                           Enter city
                         </th>
-
                         <th scope="col" class="text-base font-semibold text-gray-900 px-6 py-4 text-righ">
                           Address
                         </th>
                         <th scope="col" class="text-base font-semibold text-gray-900 px-6 py-4 text-righ">
-                          Details
+                          Delete
                         </th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr class="bg-gray-100 border-b" id="informationDetails">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center text-gray-900">1</td>
-                        <td class="text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
-                          khaeld mohamed
-                        </td>
-                        <td class="text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
-                          01026540533
-                        </td>
-                        <td class="text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
-                          khaeld@gmail.com
-                        </td>
-                        <td class="text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
-                          Egypt
-                        </td>
-                        <td class="text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
-                          Egypt
-                        </td>
-                        <td class="text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
-                          7 Tolba El-Feki St
-                        </td>
-                        <td>
-                          <button onclick="deleteData() "
-                            class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full delete-btn"><a
-                              href="#">Delete</a></button>
-                        </td>
-                      </tr>
 
-                    </tbody>
+                    @foreach ($information as $key => $item)
+                        <tbody>
+                        <tr class="bg-gray-100 border-b" id="informationDetails">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center text-gray-900">{{$key+1}}</td>
+                            <td class="text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
+                            {{ $item->name }}
+                            </td>
+                            <td class="text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
+                                {{ $item->phone }}
+                            </td>
+                            <td class="text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
+                                {{ $item->email }}
+                            </td>
+                            <td class="text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
+                                {{ $item->country }}
+                            </td>
+                            <td class="text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
+                                {{ $item->city }}
+                            </td>
+                            <td class="text-base font-medium text-gray-900 px-6 py-4 text-center whitespace-nowrap">
+                                {{ $item->address }}
+                            </td>
+                            <td>
+                                <a href="{{route('dashboard.deleteInfo', $item->id)}}" class="text-lg bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    @endforeach
                   </table>
                 </div>
               </div>

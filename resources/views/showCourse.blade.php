@@ -1,7 +1,7 @@
 @include('layouts.header')
 @include('layouts.navbar')
 @include('layouts.bg-cover')
-@include('layouts.logo') 
+@include('layouts.logo')
 
   <!-- start about -->
   <div class="relative overflow-hidden pt-16 space-y-24">
@@ -46,14 +46,14 @@
   <div class="relative overflow-hidden pt-10 pb-7  space-y-24  bg-[#F7F9FA] mb-8 ">
     <div class="container mx-auto  ">
       <div class="lg:mx-auto  lg:max-w-7xl  lg:gap-24 lg:px-8 ">
-        <h1 class="text-3xl uppercase font-black	"> Details</h1>
+        <h1 class="text-3xl uppercase font-black"> Details</h1>
         <h3 class=" text-2xl my-3 text-blue-500 font-bold">What you'll learn</h3>
         <div class="text-lg ">
-          <p class="mb-2">1- {{ $course->description }}</p>
-          <p class="mb-2">2- {{ $course->description }}</p>
-          <p class="mb-2">3- {{ $course->description }}</p>
-          <p class="mb-2">4- {{ $course->description }}</p>
-          <p class="mb-2">5- {{ $course->description }}</p>
+          <p class="mb-2">1- {{ $course->line_one }}</p>
+          <p class="mb-2">2- {{ $course->line_two }}</p>
+          <p class="mb-2">3- {{ $course->line_three }}</p>
+          <p class="mb-2">4- {{ $course->line_four }}</p>
+          <p class="mb-2">5- {{ $course->line_five }}</p>
         </div>
       </div>
     </div>
